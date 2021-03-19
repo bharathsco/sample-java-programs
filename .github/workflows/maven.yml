@@ -51,7 +51,7 @@ jobs:
       - name: Download Fortify on Demand Universal CI Tool
         uses: fortify/gha-setup-fod-uploader@v1
       - name: Perform SAST Scan
-        run: java -jar FodUpload.jar -uc bharathsco@gmail.com NWZOc0lrbjB1eEtlcEJwY2VZVH5XZjw0R1MhRTc30 -ep 2 -pp 0 -I 1 -apf -rid 142753 -purl "https://trial.fortify.com/" -aurl "https://api.trial.fortify.com/" -tc accenture_8212434_FMA_287326212 -z package.zip -entitlementPreferenceType SingleScanOnly -rp NonRemediationScanOnly 
+        run: java -jar FodUpload.jar -uc bharathsco@gmail.com NWZOc0lrbjB1eEtlcEJwY2VZVH5XZjw0R1MhRTc30 -ep 2 -pp 0 -I 1 -apf -rid 142753 -purl "https://trial.fortify.com/" -aurl "https://api.trial.fortify.com/" -tc accenture_8212434_FMA_287326212 -z /opt/package.zip -entitlementPreferenceType SingleScanOnly -rp NonRemediationScanOnly 
         env:
           FOD_UPLOAD: /opt/FodUpload.jar
           FOD_TENANT: accenture_8212434_FMA_287326212 
