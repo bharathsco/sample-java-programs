@@ -43,22 +43,22 @@ jobs:
       - name: Download Fortify ScanCentral Client
         uses: fortify/gha-setup-scancentral-client@v1
       - name: Package Code + Dependencies
-        run: scancentral package -bt mvn -o package.zip
-        #env:
-          #PACKAGE_OPTS: "-bt mvn"
+        run: scancentral package -$PACKAGE_OPTS -o package.zip
+        env:
+          PACKAGE_OPTS: "-bt mvn"
       
         # Start Fortify on Demand SAST scan. Be sure to set secrets/variables for your desired configuration.
       - name: Download Fortify on Demand Universal CI Tool
         uses: fortify/gha-setup-fod-uploader@v1
       - name: Perform SAST Scan
         run: java -jar FodUpload.jar -uc bharathsco@gmail.com NWZOc0lrbjB1eEtlcEJwY2VZVH5XZjw0R1MhRTc30 -ep SubscriptionOnly -pp 0 -I 1 -apf -rid 142753 -purl "https://trial.fortify.com/" -aurl "https://api.trial.fortify.com/" -tc accenture_8212434_FMA_287326212 -z https://github.com/bharathsco/sample-java-programs/blob/master/sample-java-programs-master.zip -entitlementPreferenceType SingleScanOnly -rp NonRemediationScanOnly 
-        env:
-          FOD_UPLOAD: /opt/FodUpload.jar
-          FOD_TENANT: accenture_8212434_FMA_287326212 
-          FOD_USER: bharathsco@gmail.com
-          FOD_PAT: NWZOc0lrbjB1eEtlcEJwY2VZVH5XZjw0R1MhRTc30
-          FOD_RELEASE_ID: 142753
-          FOD_URL: "https://trial.fortify.com/"
-          FOD_API_URL: "https://api.trial.fortify.com/"
-          FOD_UPLOADER_OPTS: "-ep SubscriptionOnly -pp 0 -I 1 -apf"
-          FOD_UPLOADER_NOTES: 'Triggered by GitHub Actions (${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})'
+       # env:
+         # FOD_UPLOAD: /opt/FodUpload.jar
+         # FOD_TENANT: accenture_8212434_FMA_287326212 
+         # FOD_USER: bharathsco@gmail.com
+         # FOD_PAT: NWZOc0lrbjB1eEtlcEJwY2VZVH5XZjw0R1MhRTc30
+         # FOD_RELEASE_ID: 142753
+         # FOD_URL: "https://trial.fortify.com/"
+         # FOD_API_URL: "https://api.trial.fortify.com/"
+         # FOD_UPLOADER_OPTS: "-ep SubscriptionOnly -pp 0 -I 1 -apf"
+         # FOD_UPLOADER_NOTES: 'Triggered by GitHub Actions (${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})'
