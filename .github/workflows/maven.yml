@@ -52,12 +52,13 @@ jobs:
         with:
           entrypoint: java
           args: java -jar /opt/FodUpload.jar -uc bharathsco@gmail.com NWZOc0lrbjB1eEtlcEJwY2VZVH5XZjw0R1MhRTc30 -ep 2 -pp 0 -I 1 -apf -rid 142753 -purl "https://trial.fortify.com/" -aurl "https://api.trial.fortify.com/" -tc accenture_8212434_FMA_287326212 -z WG.zip -entitlementPreferenceType SingleScanOnly -rp NonRemediationScanOnly 
-     #   env: 
-        #  FOD_TENANT: accenture_8212434_FMA_287326212 
-        #  FOD_USER: ${{ secrets.FOD_USER }}
-         # FOD_PAT: ${{ secrets.FOD_PAT }}
-          #FOD_RELEASE_ID: ${{ secrets.FOD_RELEASE_ID }}
-          #FOD_URL: "https://trial.fortify.com/"
-        #  FOD_API_URL: "https://api.trial.fortify.com/"
-         # FOD_UPLOADER_OPTS: "-ep 2 -pp 0 -I 1 -apf"
-          #FOD_UPLOADER_NOTES: 'Triggered by GitHub Actions (${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})'
+        env:
+          FOD_UPLOAD: /opt/FodUpload.jar
+          FOD_TENANT: accenture_8212434_FMA_287326212 
+          FOD_USER: ${{ secrets.FOD_USER }}
+          FOD_PAT: ${{ secrets.FOD_PAT }}
+          FOD_RELEASE_ID: ${{ secrets.FOD_RELEASE_ID }}
+          FOD_URL: "https://trial.fortify.com/"
+          FOD_API_URL: "https://api.trial.fortify.com/"
+          FOD_UPLOADER_OPTS: "-ep 2 -pp 0 -I 1 -apf"
+          FOD_UPLOADER_NOTES: 'Triggered by GitHub Actions (${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})'
