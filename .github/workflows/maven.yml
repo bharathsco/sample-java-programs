@@ -47,11 +47,11 @@ jobs:
         env:
           PACKAGE_OPTS: "-bt mvn"
       
-      # Start Fortify on Demand SAST scan. Be sure to set secrets/variables for your desired configuration.
-      - name: Download Fortify on Demand Universal CI Tool
-        uses: fortify/gha-setup-fod-uploader@v1
-      - name: Perform SAST Scan
-        run: java -jar https://github.com/bharathsco/sample-java-programs/blob/master/FodUpload.jar -uc bharathsco@gmail.com NWZOc0lrbjB1eEtlcEJwY2VZVH5XZjw0R1MhRTc30 -ep 2 -pp 0 -I 1 -apf -rid 142753 -purl "https://trial.fortify.com/" -aurl "https://api.trial.fortify.com/" -tc accenture_8212434_FMA_287326212 -z WG.zip -entitlementPreferenceType SingleScanOnly -rp NonRemediationScanOnly 
+      - name: Upload package and start scan
+        uses: docker://fortifydocker/fortify-ci-tools:latest
+        with:
+          entrypoint: java
+          args: java -jar /opt/FodUpload.jar -uc bharathsco@gmail.com NWZOc0lrbjB1eEtlcEJwY2VZVH5XZjw0R1MhRTc30 -ep 2 -pp 0 -I 1 -apf -rid 142753 -purl "https://trial.fortify.com/" -aurl "https://api.trial.fortify.com/" -tc accenture_8212434_FMA_287326212 -z WG.zip -entitlementPreferenceType SingleScanOnly -rp NonRemediationScanOnly 
         env: 
           FOD_TENANT: ${{ secrets.FOD_TENANT }}  
           FOD_USER: ${{ secrets.FOD_USER }}
