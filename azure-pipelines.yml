@@ -25,3 +25,13 @@
         PurchaseEntitlements: true
         PreferRemediation: true
 
+- task: Maven@3
+  inputs:
+    mavenPomFile: 'https://github.com/bharathsco/sample-java-programs/blob/master/pom.xml'
+    publishJUnitResults: true
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    javaHomeOption: 'JDKVersion'
+    mavenVersionOption: 'Default'
+    mavenAuthenticateFeed: false
+    effectivePomSkip: false
+    sonarQubeRunAnalysis: false
