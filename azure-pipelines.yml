@@ -1,5 +1,3 @@
-
-
 - task: FedRampFortifyOnDemandStatic@7
   inputs:
     FortifyProjects: 'https://github.com/bharathsco/sample-java-programs.git'
@@ -13,9 +11,8 @@
     EntitlementPreference: '1'
     PurchaseEntitlements: true
     PreferRemediation: true
-    
-    - task: FedRampFortifyOnDemandStatic@7
-      inputs:
+- task: FedRampFortifyOnDemandStatic@7
+  inputs:
         FortifyProjects: 'https://github.com/bharathsco/sample-java-programs.git'
         BSIToken: 'eyJ0ZW5hbnRJZCI6MTg0ODksInRlbmFudENvZGUiOiJhY2NlbnR1cmVfODIxMjQzNF9GTUFfMjg3MzI2MjEyIiwicmVsZWFzZUlkIjoxNDMxNjQsInBheWxvYWRUeXBlIjoiQU5BTFlTSVNfUEFZTE9BRCIsImFzc2Vzc21lbnRUeXBlSWQiOjE0LCJ0ZWNobm9sb2d5VHlwZSI6IkpBVkEvSjJFRSIsInRlY2hub2xvZ3lUeXBlSWQiOjcsInRlY2hub2xvZ3lWZXJzaW9uIjoiMS45IiwidGVjaG5vbG9neVZlcnNpb25JZCI6MTcsImF1ZGl0UHJlZmVyZW5jZSI6Ik1hbnVhbCIsImF1ZGl0UHJlZmVyZW5jZUlkIjoxLCJpbmNsdWRlVGhpcmRQYXJ0eSI6ZmFsc2UsImluY2x1ZGVPcGVuU291cmNlQW5hbHlzaXMiOmZhbHNlLCJwb3J0YWxVcmkiOiJodHRwczovL3RyaWFsLmZvcnRpZnkuY29tLyIsImFwaVVyaSI6Imh0dHBzOi8vYXBpLnRyaWFsLmZvcnRpZnkuY29tIiwic2NhblByZWZlcmVuY2UiOiJTdGFuZGFyZCIsInNjYW5QcmVmZXJlbmNlSWQiOjF9'
         APIAuthenticationType: '2'
@@ -28,4 +25,3 @@
         PurchaseEntitlements: true
         PreferRemediation: true
 
-        
