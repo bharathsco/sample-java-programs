@@ -29,8 +29,6 @@ steps:
     Username: 'bharathsco@gmail.com'
     PersonalAccessTokenSecret: 'NWZOc0lrbjB1eEtlcEJwY2VZVH5XZjw0R1MhRTc30'
     TenantID: 'accenture_8212434_FMA_287326212'
-    ProxyHost: 'trial.fortify.com'
-    ProxyPort: '80'
     EntitlementPreference: '1'
     PurchaseEntitlements: true
     PreferRemediation: true
