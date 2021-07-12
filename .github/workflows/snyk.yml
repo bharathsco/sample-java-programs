@@ -1,0 +1,21 @@
+name: Snyk test
+on: push
+jobs:
+  security:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: snyk/actions/setup@master
+    #- uses: actions/setup-go@v1
+     # with:
+      #  go-version: "1.13"
+          #- name: Snyk monitor
+      #run: snyk monitor
+    - name: Snyk test
+      run: snyk test 
+      env:
+        SNYK_TOKEN: 5f22108b-4f20-4760-817d-3dd42b3a3da3
+      #--all-projects
+      #sfdsf
+        #SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+    
